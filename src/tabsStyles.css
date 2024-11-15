@@ -1,0 +1,11 @@
+.MuiTab-root {
+    color: white;
+  }
+  
+  .MuiTab-root.Mui-selected {
+    color: white;
+  }
+  
+  .MuiTabs-indicator {
+    background-color: white;
+  }
