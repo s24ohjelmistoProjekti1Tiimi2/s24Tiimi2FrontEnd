@@ -11,7 +11,7 @@ import About from './About';
 
 
 function App() {
-  
+
 
   const [value, setValue] = useState('0')
 
@@ -35,13 +35,13 @@ function App() {
         justifyContent="center"
         alignItems="center"
       >
-        <AppBar position="fixed" sx={{ backgroundColor: '#40A056' }}> 
+        <AppBar position="fixed" sx={{ backgroundColor: '#40A056' }}>
           <Toolbar>
             <Typography variant="h6">Omppu and Rane's Shop</Typography>
           </Toolbar>
         </AppBar>
 
-        <img src="/src/images/Paw_Print.png" alt="Paw" style={{ width: '250px', height: 'auto', margin: '20px 0' }}/>
+        <img src="/src/images/Paw_Print.png" alt="Paw" style={{ width: '250px', height: 'auto', margin: '20px 0' }} />
 
         {/*TABCONTEXT, TABS and TABPANEL implemented with help by MUI docs and CHATGPT */}
         <TabContext value={value}>
@@ -49,17 +49,37 @@ function App() {
             value={value} onChange={handleChange}
             centered
             sx={{
-              width:"100%",
+              width: "100%",
               backgroundColor: '#40A056',
               "& .MuiTabs-indicator": { backgroundColor: "white" },
               "& .MuiTab-root": { color: "white" },
               "& .Mui-selected": { color: "white" },
             }}
-            >
+          >
 
-            <Tab label="HOME PAGE" value="0" />
-            <Tab label="PRODUCTS" value="1" />
-            <Tab label="ABOUT" value="2" />
+            <Tab label="HOME PAGE" value="0"
+              sx={{
+                color: "white",
+                "&.Mui-selected": {
+                  color: "white",
+                },
+              }}
+            />
+            <Tab label="PRODUCTS" value="1"
+              sx={{
+                color: "white",
+                "&.Mui-selected": {
+                  color: "white",
+                },
+              }}
+            />
+            <Tab label="ABOUT" value="2"
+              sx={{
+                color: "white",
+                "&.Mui-selected": {
+                  color: "white",
+                },
+              }} />
           </Tabs>
 
 
@@ -70,11 +90,11 @@ function App() {
           </TabPanel>
 
           <TabPanel value="1">
-            <Products/>
+            <Products />
           </TabPanel>
 
           <TabPanel value="2">
-            <About/>
+            <About />
           </TabPanel>
 
         </TabContext>
