@@ -51,6 +51,7 @@ function App() {
             sx={{
               width:"100%",
               backgroundColor: '#40A056',
+              "& .MuiTabs-indicator": { backgroundColor: "white" },
               "& .MuiTab-root": { color: "white" },
               "& .Mui-selected": { color: "white" },
             }}
