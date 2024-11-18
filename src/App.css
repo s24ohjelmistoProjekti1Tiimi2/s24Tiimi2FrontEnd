@@ -4,8 +4,10 @@ body{
 
 #root {
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
-
   width: 100%;
+}
+
+.MuiContainer-root {
+  padding: 0 !important;
 }
