@@ -37,7 +37,7 @@ function App() {
       >
         <AppBar position="fixed" sx={{ backgroundColor: '#40A056' }}> 
           <Toolbar>
-            <Typography variant="h6">Ompun ja Ranen kauppa</Typography>
+            <Typography variant="h6">Omppu and Rane's Shop</Typography>
           </Toolbar>
         </AppBar>
 
