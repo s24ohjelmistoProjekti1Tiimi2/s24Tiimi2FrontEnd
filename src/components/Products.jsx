@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import './App.css'
-import { getProducts } from './shopApi';
+import '../App.css'
+import { getProducts } from '../shopApi';
 import { AgGridReact } from 'ag-grid-react';
 
 import "ag-grid-community/styles/ag-grid.css"; 
