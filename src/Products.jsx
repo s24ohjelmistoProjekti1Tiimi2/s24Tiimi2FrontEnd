@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { getProducts } from '../shopApi';
+import { getProducts } from './shopApi';
 import { AgGridReact } from 'ag-grid-react';
 
 import "ag-grid-community/styles/ag-grid.css"; 
@@ -39,13 +39,13 @@ function Products() {
 	};
 
 
-	const [value, setValue] = useState('0')
+	// const [value, setValue] = useState('0')
 
-	// CONST FUNC implemented with help by CHATGPT
-	const handleChange = (event, newValue) => {
-		//setDesc(event.target.value);
-		setValue(newValue)
-	};
+	// // CONST FUNC implemented with help by CHATGPT
+	// const handleChange = (event, newValue) => {
+	// 	//setDesc(event.target.value);
+	// 	setValue(newValue)
+	// };
 
 
 	return (
