@@ -7,7 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { AppBar, Stack, Tab, Tabs, Toolbar, Typography } from '@mui/material';
 import { TabContext, TabPanel } from '@mui/lab';
 import Products from './components/Products';
-import About from './About';
+import About from './components/About';
 
 
 function App() {
