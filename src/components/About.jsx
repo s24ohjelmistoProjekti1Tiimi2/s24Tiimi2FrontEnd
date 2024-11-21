@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import './App.css'
+import '../App.css'
 
 
 
 
 
-function Products() {
+function About() {
 
 
 	const [value, setValue] = useState('0')
@@ -19,10 +19,10 @@ function Products() {
 
 	return (
 		<>
-			<h2>Products list</h2>
-			<p>This page is about the products</p>
+			<h2>About us</h2>
+			<p>This page is about us.</p>
 		</>
 	)
 }
 
-export default Products
+export default About

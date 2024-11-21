@@ -6,8 +6,8 @@ import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
 import { AppBar, Stack, Tab, Tabs, Toolbar, Typography } from '@mui/material';
 import { TabContext, TabPanel } from '@mui/lab';
-import Products from './Products';
-import About from './About';
+import Products from './components/Products';
+import About from './components/About';
 
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
       >
         <AppBar position="fixed" sx={{ backgroundColor: '#40A056' }}>
           <Toolbar>
-            <Typography variant="h6">Omppu and Rane's Shop</Typography>
+            <Typography variant="h6">Omppu and Rane Shop</Typography>
           </Toolbar>
         </AppBar>
 
