@@ -1,5 +1,6 @@
-import { Box, Typography } from '@mui/material';
 import '../App.css'
+
+import { Box, Typography } from '@mui/material';
 
 function About() {
 
@@ -11,7 +12,7 @@ function About() {
         justifyContent: 'center', 
         alignItems: 'center',
         backgroundColor: 'rgba(245, 245, 245, 0.8)',
-		margin: 0,
+		    margin: 0,
         padding: 2,
       }}
     >
