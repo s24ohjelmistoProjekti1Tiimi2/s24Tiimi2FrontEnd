@@ -18,12 +18,12 @@ function App() {
         alignItems="center"
       >
         <AppBar position="fixed" sx={{ backgroundColor: '#40A056' }}>
-          <Toolbar>
+          <Toolbar className="toolbar">
             <Typography variant="h6">Omppu and Rane Shop</Typography>
             <nav>
-              <Link to={"/"}>Home</Link>
-              <Link to={"/products"}>Products</Link>
-              <Link to={"/about"}>About</Link>
+              <Link to={"/"} className="nav-links">Home</Link>
+              <Link to={"/products"} className="nav-links">Products</Link>
+              <Link to={"/about"} className="nav-links">About</Link>
             </nav>
           </Toolbar>
         </AppBar>
