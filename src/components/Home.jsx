@@ -5,8 +5,7 @@ export default function Home() {
 
     return(
         <Stack>
-        <Typography variant='h2' style={{color: 'black'}}>Welcome to Omppu and Rane's shop</Typography>
-        
+        <Typography style={{color: 'black'}}>Welcome to our shop! Here you will find the latest and most popular dog supplies and food for your furry fried.</Typography>
         </Stack>
     )
     
