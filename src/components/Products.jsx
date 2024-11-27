@@ -1,12 +1,11 @@
-import { useEffect, useState } from 'react'
 import '../App.css'
+
+import { useEffect, useState } from 'react'
 import { getProducts } from '../shopApi';
 import { AgGridReact } from 'ag-grid-react';
 
 import "ag-grid-community/styles/ag-grid.css"; 
 import "ag-grid-community/styles/ag-theme-material.css";
-
-
 
 function Products() {
 
@@ -50,7 +49,7 @@ function Products() {
 
 	return (
 		<>
-			<h2>Products list</h2>
+			<h2>Product list</h2>
 			<div className='ag-theme-material' style={{height: 500, width:1000}}>
 			<AgGridReact
 				rowData={products}
