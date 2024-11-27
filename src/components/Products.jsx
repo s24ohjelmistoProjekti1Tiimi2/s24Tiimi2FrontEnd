@@ -39,15 +39,6 @@ function Products() {
 	};
 
 
-	// const [value, setValue] = useState('0')
-
-	// // CONST FUNC implemented with help by CHATGPT
-	// const handleChange = (event, newValue) => {
-	// 	//setDesc(event.target.value);
-	// 	setValue(newValue)
-	// };
-
-
 	return (
 		<>
 			<Stack
@@ -57,7 +48,7 @@ function Products() {
 				justifyContent="center"
 				alignItems="center"
 			>
-				<Typography variant='h3'>Product list</Typography>
+				<Typography variant='h3'>Products</Typography>
 
 				<div className='ag-theme-material' style={{ height: 500, width: 1000}}>
 					<AgGridReact
