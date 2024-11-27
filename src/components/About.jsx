@@ -1,5 +1,6 @@
-import { Box, Typography } from '@mui/material';
 import '../App.css'
+
+import { Box, Typography } from '@mui/material';
 
 function About() {
 
