@@ -10,7 +10,7 @@ import About from './components/About.jsx'
 
 const router = createHashRouter([
   {
-    basename: import.meta.env.BASE_URL,
+    basename: import.meta.env.VITE_API_PRODUCTS_URL,
     path: "/",
     element: <App />,
     children: [
