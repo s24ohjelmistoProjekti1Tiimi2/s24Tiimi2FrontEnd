@@ -8,7 +8,7 @@ function About() {
 	return (
 		<Box 
       sx={{ 
-        display: 'block', 
+        // display: 'block', 
         justifyContent: 'center', 
         alignItems: 'center',
         backgroundColor: 'rgba(245, 245, 245, 0.8)',
