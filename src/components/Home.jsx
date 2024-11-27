@@ -5,17 +5,35 @@ export default function Home() {
 
     return(
         <Box
-        sx={{ display: 'block',
+        sx={{
+        display: 'block',
         justifyContent: 'center',
         alignItems: 'center',
         height: '100vh',
-        position: 'relative',
-        top: '50px',
-        left: '-50px' }}>
+        paddingTop: '130px',
+        paddingRight: '350px',
+        boxSizing: 'border-box'
+        }}
+        
+        >
 
-        <Typography variant='h3' style={{color: 'black'}}>Welcome to Omppu and Rane's shop</Typography>
+        <Typography
+        variant='h3'
+        sx={{
+            color: 'black',
+            fontSize: 'clamp(1.5rem, 5vw, 3rem)'
+        }}
+        >
+            Welcome to Omppu and Rane's Shop
+        </Typography>
 
-        <Typography>Here you will find the latest and most popular dog supplies and food for your furry friend!</Typography>
+        <Typography
+        variant='subtitle1'
+        sx={{
+            fontSize: 'clamp(0,8rem, 3vw, 1,5rem)',
+          }}        
+        >
+            Here you will find the latest and most popular dog supplies and food for your furry friend!</Typography>
         
         </Box>
     )
