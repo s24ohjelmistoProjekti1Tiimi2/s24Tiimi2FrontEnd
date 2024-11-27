@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
 import './index.css'
 
 import App from './App.jsx'
@@ -8,7 +8,7 @@ import Home from './components/Home.jsx'
 import Products from './components/Products.jsx'
 import About from './components/About.jsx'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,
@@ -26,6 +26,9 @@ const router = createBrowserRouter([
         element: <About />,
       },
     ]
+  },
+  {
+    basename: import.meta.env.BASE_URL
   }
 ])
 
