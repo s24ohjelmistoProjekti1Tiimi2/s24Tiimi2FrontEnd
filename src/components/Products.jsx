@@ -50,7 +50,7 @@ function Products() {
 	return (
 		<>
 			<h2>Product list</h2>
-			<div className='ag-theme-material' style={{height: 500, width:1000}}>
+			<div className='ag-theme-material' style={{height: 500, width:1000,  marginBottom: '500px' }}>
 			<AgGridReact
 				rowData={products}
 				columnDefs={colDefs}
