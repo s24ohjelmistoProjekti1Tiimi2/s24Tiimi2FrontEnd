@@ -10,6 +10,7 @@ import About from './components/About.jsx'
 
 const router = createHashRouter([
   {
+    basename: import.meta.env.BASE_URL,
     path: "/",
     element: <App />,
     children: [
@@ -27,9 +28,6 @@ const router = createHashRouter([
       },
     ]
   },
-  {
-    basename: import.meta.env.BASE_URL
-  }
 ])
 
 createRoot(document.getElementById('root')).render(
