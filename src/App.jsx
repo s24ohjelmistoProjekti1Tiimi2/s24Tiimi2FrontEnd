@@ -19,13 +19,13 @@ function App() {
         <AppBar position="fixed" sx={{ backgroundColor: '#40A056' }}>
           <Toolbar>
             <Typography variant="h6">Omppu and Rane Shop</Typography>
+            <nav>
+              <Link to={"/"}>Home</Link>
+              <Link to={"/products"}>Products</Link>
+              <Link to={"/about"}>About</Link>
+            </nav>
           </Toolbar>
         </AppBar>
-        <nav>
-          <Link to={"/"}>Home</Link>
-          <Link to={"/products"}>Products</Link>
-          <Link to={"/about"}>About</Link>
-        </nav>
         <Outlet />
       </Stack>
     </Container>
