@@ -69,7 +69,7 @@ function Registration() {
         padding: 2,
       }}
     >
-    <div style={{width: "50%"}}>
+    <div style={{width: "35%"}}>
       <Stack spacing={2}>
         <Typography variant="h4" gutterBottom>
           Registration
