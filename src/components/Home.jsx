@@ -24,7 +24,7 @@ export default function Home() {
             fontSize: 'clamp(1.5rem, 5vw, 3rem)'
         }}
         >
-            Welcome to Omppu and Rane's Shop
+            Welcome to Omppu and Rane&apos;s Shop
         </Typography>
 
         <Typography
