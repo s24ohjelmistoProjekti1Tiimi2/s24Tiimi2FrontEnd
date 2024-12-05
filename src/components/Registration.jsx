@@ -6,24 +6,24 @@ import { saveRegistration } from '../shopApi';
 function Registration() {
 
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
     email: "",
   });
-  const [firstNameError, setFirstNameError] = useState(false);
+  const [firstnameError, setFirstnameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const firstNameErrorValidation = () => {
-    if (!formData.firstName) {
+  const firstnameErrorValidation = () => {
+    if (!formData.firstname) {
         // Asetetaan error näkyville lomakkeeseen
-        setFirstNameError(true);
-        // Palautetaan true firstNameErrorille
+        setFirstnameError(true);
+        // Palautetaan true firstnameErrorille
         return true;
     } else {
         // Asetetaan error pois lomakenäkymästä
-        setFirstNameError(false);
-        // Palautetaan false firstNameErrorille
+        setFirstnameError(false);
+        // Palautetaan false firstnameErrorille
         return false;
     }
   }
@@ -48,9 +48,9 @@ function Registration() {
   };
 
   const handleSubmit = () => {
-    const firstNameErrorState = firstNameErrorValidation();
+    const firstnameErrorState = firstnameErrorValidation();
     const emailErrorState = emailErrorValidation();
-    if (firstNameErrorState || emailErrorState) {
+    if (firstnameErrorState || emailErrorState) {
       return;
     } else {
       saveRegistration(formData)
@@ -85,19 +85,19 @@ function Registration() {
           required
           margin="dense"
           variant="outlined"
-          name="firstName"
-          value={formData.firstName}
+          name="firstname"
+          value={formData.firstname}
           onChange={handleChange}
           label="First Name"
-          error={firstNameError}
-          helperText={firstNameError ? "Set first name" : ""}
+          error={firstnameError}
+          helperText={firstnameError ? "Set first name" : ""}
         />
         <TextField
           style={{ backgroundColor: "white" }}
           margin="dense"
           variant="outlined"
-          name="lastName"
-          value={formData.lastName}
+          name="lastname"
+          value={formData.lastname}
           onChange={handleChange}
           label="Last Name"
         />
