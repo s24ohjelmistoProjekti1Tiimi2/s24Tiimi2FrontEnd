@@ -2,24 +2,34 @@ import '../App.css'
 
 import { useEffect, useState } from 'react'
 import { getProducts } from '../shopApi';
-import { AgGridReact } from 'ag-grid-react';
-
-import "ag-grid-community/styles/ag-grid.css";
-import "ag-grid-community/styles/ag-theme-material.css";
 import { Stack, Typography } from '@mui/material';
+
+import { DataGrid, GridToolbarColumnsButton, GridToolbarContainer, GridToolbarDensitySelector, GridToolbarFilterButton } from '@mui/x-data-grid';
+
+function CustomToolbar() {
+	return (
+	  <GridToolbarContainer sx={{ backgroundColor: "white" }}>
+		<GridToolbarColumnsButton />
+		<GridToolbarFilterButton />
+		<GridToolbarDensitySelector
+		  slotProps={{ tooltip: {title: "Change density"} }}
+		/>
+	</GridToolbarContainer>
+	);
+}
 
 function Products() {
 
 	const [products, setProducts] = useState([]);
 
-	const [colDefs, setColDefs] = useState([
-		{ field: "name", filter: true },
-		{ field: "color", filter: true, width: 150 },
-		{ field: "price", filter: true, width: 150 },
-		{ field: "size", filter: true, width: 120 },
-		{ field: "manufacturer", filter: true },
-		{ field: "type", filter: true, width: 150 },
-	])
+	const columns = [
+		{ field: "name", headerName:"Name" },
+		{ field: "color", headerName:"Color", width: 150 },
+		{ field: "price", headerName:"Price", width: 150 },
+		{ field: "size", headerName:"Size", width: 120 },
+		{ field: "manufacturer", headerName:"Manufacturer", width: 150 },
+		{ field: "type", headerName:"Type", width: 150 },
+	];
 
 	useEffect(() => {
 		handleFetch();
@@ -38,28 +48,29 @@ function Products() {
 			.catch(error => console.error(error))
 	};
 
-
 	return (
 		<>
-			<Stack
-				mt={2}
-				direction="column"
-				spacing={5}
-				justifyContent="center"
-				alignItems="center"
-			>
-				<Typography variant='h3'>Products</Typography>
-
-				<div className='ag-theme-material' style={{ height: 500, width: 1000}}>
-					<AgGridReact
-						rowData={products}
-						columnDefs={colDefs}
-						pagination={true}
-						paginationAutoPageSize={true}
-						suppressCellFocus={true}
-					/>
-				</div>
-			</Stack>
+		{/* <Stack
+			mt={2}
+			direction="column"
+			spacing={5}
+			justifyContent="center"
+			alignItems="center"
+		> */}
+		<Typography variant='h3'>Products</Typography>
+		<div style={{ display: "flex", alignContent: "center", justifyContent: "center"}}>
+			<div style={{ height: 600, width: "80%" }}>
+				<DataGrid 
+				style={{ backgroundColor: "white" }}
+				rows={products}
+				columns={columns}
+				slots={{
+					toolbar: CustomToolbar,
+				}}
+				/>
+			</div>
+    	</div>
+		{/* </Stack> */}
 		</>
 	)
 }

@@ -1,6 +1,6 @@
 import '../App.css'
 import { useState } from "react";
-import { Box, Button, TextField, Typography, Stack } from '@mui/material';
+import { Box, Button, TextField, Typography, Stack, Snackbar } from '@mui/material';
 import { saveRegistration } from '../shopApi';
 
 function Registration() {
@@ -12,6 +12,7 @@ function Registration() {
   });
   const [firstNameError, setFirstNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const firstNameErrorValidation = () => {
     if (!formData.firstName) {
@@ -54,20 +55,23 @@ function Registration() {
     } else {
       console.log('Form Data:', formData); 
       saveRegistration(formData)
-        .then(response => {
-          console.log('Response from backend:', response);
-        })
+        .then(setOpen(true))
         .catch(err => console.error(err))
     }
   }
 
+  const handleClose = () => {
+    setOpen(false);
+  };
+
 	return (
+    <>
 		<Box 
       sx={{ 
         display: 'flex', 
         justifyContent: 'center', 
         alignItems: 'center',
-        backgroundColor: "rgba(255, 255, 255, 0.87)",
+        backgroundColor: 'rgba(245, 245, 245, 0.8)',
 		    margin: 0,
         padding: 2,
       }}
@@ -78,6 +82,7 @@ function Registration() {
           Registration
         </Typography>
         <TextField
+          style={{ backgroundColor: "white" }}
           required
           margin="dense"
           variant="outlined"
@@ -89,14 +94,16 @@ function Registration() {
           helperText={firstNameError ? "Set first name" : ""}
         />
         <TextField
-            margin="dense"
-            variant="outlined"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            label="Last Name"
+          style={{ backgroundColor: "white" }}
+          margin="dense"
+          variant="outlined"
+          name="lastName"
+          value={formData.lastName}
+          onChange={handleChange}
+          label="Last Name"
         />
         <TextField
+          style={{ backgroundColor: "white" }}
           required
           margin="dense"
           variant="outlined"
@@ -105,25 +112,26 @@ function Registration() {
           onChange={handleChange}
           label="Email"
           error={emailError}
-          helperText={emailError ? 
-          <>
-              Set valid email, for example: 
-              <span style={{ fontStyle: "italic" }}> example@gmail.com</span>
-          </> 
-          : ""}
+          helperText={emailError ? "Set valid email, for example: example@gmail.com" : ""}
         />
         <Box sx={{textAlign: "left" }}>
           <Typography 
             variant="caption" 
-            color="textSecondary" 
-            sx={{ marginTop: 2 }}>
+            color="textSecondary">
             Required *
           </Typography>
         </Box>
       </Stack>
-      <Button variant="outlined" onClick={handleSubmit}>Register</Button>
+      <Button variant="outlined" onClick={handleSubmit} style={{ backgroundColor: "white" }}>Register</Button>
     </div>
     </Box>
+      <Snackbar
+      open={open}
+      message="Registered successfully"
+      autoHideDuration={3000}
+      onClose={handleClose}
+    />
+    </>
 	)
 }
 
