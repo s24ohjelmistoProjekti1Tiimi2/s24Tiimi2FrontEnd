@@ -52,8 +52,11 @@ function Registration() {
     if (firstNameErrorState || emailErrorState) {
       return;
     } else {
+      console.log('Form Data:', formData); 
       saveRegistration(formData)
-        .then(console.log(formData))
+        .then(response => {
+          console.log('Response from backend:', response);
+        })
         .catch(err => console.error(err))
     }
   }
