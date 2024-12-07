@@ -28,12 +28,12 @@ function Products() {
   const [products, setProducts] = useState([]);
 
   const columns = [
-    { field: "name", headerName: "Name" },
+    { field: "name", headerName: "Name", width: 200 },
     { field: "color", headerName: "Color", width: 150 },
     { field: "price", headerName: "Price", width: 150 },
     { field: "size", headerName: "Size", width: 120 },
     { field: "manufacturer", headerName: "Manufacturer", width: 150 },
-    { field: "type", headerName: "Type", width: 150 },
+    { field: "type", headerName: "Type", width: 100 },
   ];
 
   useEffect(() => {
@@ -55,13 +55,14 @@ function Products() {
 
   return (
     <>
-      {/* <Stack
+      <Stack
 			mt={2}
 			direction="column"
 			spacing={5}
 			justifyContent="center"
 			alignItems="center"
-		> */}
+      marginTop={12}
+		>
       <Typography variant="h3">Products</Typography>
       <div
         style={{
@@ -70,9 +71,9 @@ function Products() {
           justifyContent: "center",
         }}
       >
-        <div style={{ height: 600, width: "80%" }}>
+        <div style={{ height: "auto", width: "auto" }}>
           <DataGrid
-            style={{ backgroundColor: "white" }}
+            style={{ backgroundColor: "white", padding: 20, marginBottom: 20 }}
             rows={products}
             columns={columns}
             slots={{
@@ -81,7 +82,7 @@ function Products() {
           />
         </div>
       </div>
-      {/* </Stack> */}
+      </Stack>
     </>
   );
 }
