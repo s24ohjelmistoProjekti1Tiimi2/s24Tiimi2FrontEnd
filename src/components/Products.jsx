@@ -1,5 +1,4 @@
 import "../App.css";
-
 import { useEffect, useState } from "react";
 import { getProducts } from "../shopApi";
 import { Stack, Typography } from "@mui/material";
