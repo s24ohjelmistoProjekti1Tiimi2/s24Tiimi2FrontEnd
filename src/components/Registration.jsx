@@ -61,7 +61,10 @@ function Registration() {
     } else {
       console.log('Form Data:', formData); 
       saveRegistration(formData)
-        .then(setOpen(true))
+        .then(() => {
+          setOpen(true);
+          setFormData({ firstname: "", lastname: "", email: "" });
+        })
         .catch((err) => console.error(err));
     }
   };
@@ -78,11 +81,15 @@ function Registration() {
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: "rgba(245, 245, 245, 0.8)",
-          margin: 0,
+          height:"500px",
+          width: "500px",
+          margin: "auto",
+
+
           padding: 2,
         }}
       >
-        <div style={{ width: "35%" }}>
+        <div style={{ width: "80%" }}>
           <Stack spacing={2}>
             <Typography variant="h4" gutterBottom>
               Registration

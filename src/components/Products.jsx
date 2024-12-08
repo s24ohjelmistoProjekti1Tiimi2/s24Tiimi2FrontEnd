@@ -70,7 +70,7 @@ function Products() {
           justifyContent: "center",
         }}
       >
-        <div style={{ height: "auto", width: "auto" }}>
+        <div style={{ height: "auto", width: "auto", marginBottom: 300 }}>
           <DataGrid
             style={{ backgroundColor: "white", padding: 20, marginBottom: 20 }}
             rows={products}
