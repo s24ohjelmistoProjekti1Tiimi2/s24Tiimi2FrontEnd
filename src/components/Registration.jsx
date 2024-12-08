@@ -16,9 +16,11 @@ function Registration() {
     lastname: "",
     email: "",
   });
+  
   const [firstnameError, setFirstnameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [open, setOpen] = useState(false);
+  const [deleteOpen, setDeleteOpen] = useState(false);
 
   const firstnameErrorValidation = () => {
     if (!formData.firstname) {
@@ -69,9 +71,19 @@ function Registration() {
     }
   };
 
+  const handleDelete = () => {
+    console.log("Unregister request sent for:", formData);
+    setDeleteOpen(true);
+    setFormData({ firstname: "", lastname: "", email: "" });
+  }
+
   const handleClose = () => {
     setOpen(false);
   };
+
+  const handleDeleteClose = () => {
+    setDeleteOpen(false);
+  }
 
   return (
     <>
@@ -146,9 +158,16 @@ function Registration() {
           <Button
             variant="outlined"
             onClick={handleSubmit}
-            style={{ backgroundColor: "white" }}
+            style={{ backgroundColor: "white", marginBottom: "20px" }}
           >
             Register
+          </Button>
+          <Button
+            variant="outlined"
+            onClick={handleDelete}
+            style={{ backgroundColor: "white", marginBottom: "30px", color: "red" }}
+          >
+            Request to be unregistered
           </Button>
         </div>
       </Box>
@@ -157,6 +176,12 @@ function Registration() {
         message="Registered successfully"
         autoHideDuration={3000}
         onClose={handleClose}
+      />
+      <Snackbar
+        open={deleteOpen}
+        message="Request sent successfully"
+        autoHideDuration={3000}
+        onClose={handleDeleteClose}
       />
     </>
   );
