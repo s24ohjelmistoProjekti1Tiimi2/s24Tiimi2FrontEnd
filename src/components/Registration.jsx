@@ -8,7 +8,7 @@ import {
   Stack,
   Snackbar,
 } from "@mui/material";
-import { saveRegistration } from "../shopApi";
+import { getCustomerId, saveRegistration, softDeleteCustomer } from "../shopApi";
 
 function Registration() {
   const [formData, setFormData] = useState({
@@ -61,7 +61,6 @@ function Registration() {
     if (firstnameErrorState || emailErrorState) {
       return;
     } else {
-      console.log('Form Data:', formData); 
       saveRegistration(formData)
         .then(() => {
           setOpen(true);
@@ -71,10 +70,28 @@ function Registration() {
     }
   };
 
-  const handleDelete = () => {
-    console.log("Unregister request sent for:", formData);
-    setDeleteOpen(true);
-    setFormData({ firstname: "", lastname: "", email: "" });
+  // const handleDelete = () => {
+  //   console.log("Unregister request sent for:", formData);
+  //   setDeleteOpen(true);
+  //   setFormData({ firstname: "", lastname: "", email: "" });
+  // }
+
+  const handleSoftDelete = () => {
+    const emailErrorState = emailErrorValidation();
+    setFirstnameError(false);
+    if (emailErrorState) {
+      return;
+    } else {
+      getCustomerId(formData.email)
+        .then((customerId) => {
+          softDeleteCustomer(customerId)
+        })
+        .then(() => {
+          setDeleteOpen(true);
+          setFormData({ firstname: "", lastname: "", email: "" });
+        })
+        .catch((err) => console.error(err));
+    }
   }
 
   const handleClose = () => {
@@ -164,8 +181,8 @@ function Registration() {
           </Button>
           <Button
             variant="outlined"
-            onClick={handleDelete}
-            style={{ backgroundColor: "white", marginBottom: "30px", color: "red" }}
+            onClick={handleSoftDelete}
+            style={{ backgroundColor: "white", marginBottom: "20px", color: "red" }}
           >
             Request to be unregistered
           </Button>
