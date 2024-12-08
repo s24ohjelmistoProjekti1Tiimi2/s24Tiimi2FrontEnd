@@ -9,13 +9,13 @@ export default function Home() {
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
-        paddingTop: "130px",
-        paddingRight: "350px",
+        paddingTop: "25vh",
+        paddingRight: "45vh",
         boxSizing: "border-box",
       }}
     >
       <Typography
-        variant="h3"
+        variant="h2"
         sx={{
           color: "black",
           fontSize: "clamp(1.5rem, 5vw, 3rem)",

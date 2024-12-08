@@ -10,7 +10,11 @@ function App() {
     
     <Container maxWidth="xl">
       <CssBaseline />
-        <AppBar position="fixed" sx={{ backgroundColor: '#40A056' }}>
+        <AppBar 
+          position="absolute" 
+          sx={{ 
+            backgroundColor: "rgba(64, 160, 86, 0.3)",
+             }}>
           <Toolbar className="toolbar">
             <Typography variant="h6">Omppu and Rane&apos;s Shop</Typography>
             <nav>

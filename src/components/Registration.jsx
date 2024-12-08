@@ -81,18 +81,24 @@ function Registration() {
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: "rgba(245, 245, 245, 0.8)",
-          height:"500px",
+          height:"550px",
           width: "500px",
           margin: "auto",
-
-
           padding: 2,
+          marginTop: "100px",
         }}
       >
         <div style={{ width: "80%" }}>
-          <Stack spacing={2}>
+          <Stack 
+          spacing={2}
+          marginTop={6}
+          marginBottom={0}
+          >
             <Typography variant="h4" gutterBottom>
               Registration
+            </Typography>
+            <Typography variant="subtitle1">
+            Register as a user to receive the latest information on products, campaigns, and bonus program rewards.
             </Typography>
             <TextField
               style={{ backgroundColor: "white" }}
