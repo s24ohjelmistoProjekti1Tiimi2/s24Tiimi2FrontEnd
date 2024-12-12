@@ -1,7 +1,6 @@
 {
   "name": "s24tiimi2frontend",
   "private": true,
-  "homepage": "https://s24ohjelmistoProjekti1Tiimi2.github.io/s24Tiimi2FrontEnd/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -9,8 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "@emotion/react": "^11.13.5",
