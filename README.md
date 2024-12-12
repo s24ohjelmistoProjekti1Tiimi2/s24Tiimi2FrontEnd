@@ -17,7 +17,7 @@ This project is part of the Software Project 1 course and provides the frontend 
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/s24ohjelmistoprojekti1tiimi2/s24Tiimi2FrontEnd.git
+   git clone https://github.com/s24ohjelmistoProjekti1Tiimi2/s24Tiimi2FrontEnd.git
 
 2. Navigate to the project directory:
    ```bash
