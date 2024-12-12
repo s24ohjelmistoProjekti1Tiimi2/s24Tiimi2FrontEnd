@@ -1,13 +1,6 @@
 import "../App.css";
 import { useState } from "react";
-import {
-  Box,
-  Button,
-  TextField,
-  Typography,
-  Stack,
-  Snackbar,
-} from "@mui/material";
+import { Box, Button, TextField, Typography, Stack, Snackbar } from "@mui/material";
 import { getCustomerId, saveRegistration, softDeleteCustomer } from "../shopApi";
 
 function Registration() {
@@ -16,7 +9,7 @@ function Registration() {
     lastname: "",
     email: "",
   });
-  
+
   const [firstnameError, setFirstnameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [open, setOpen] = useState(false);
@@ -24,14 +17,12 @@ function Registration() {
 
   const firstnameErrorValidation = () => {
     if (!formData.firstname) {
-      // Asetetaan error näkyville lomakkeeseen
+      // show error in form
       setFirstnameError(true);
-      // Palautetaan true firstnameErrorille
       return true;
     } else {
-      // Asetetaan error pois lomakenäkymästä
+      // error notification off
       setFirstnameError(false);
-      // Palautetaan false firstnameErrorille
       return false;
     }
   };
@@ -70,12 +61,6 @@ function Registration() {
     }
   };
 
-  // const handleDelete = () => {
-  //   console.log("Unregister request sent for:", formData);
-  //   setDeleteOpen(true);
-  //   setFormData({ firstname: "", lastname: "", email: "" });
-  // }
-
   const handleSoftDelete = () => {
     const emailErrorState = emailErrorValidation();
     setFirstnameError(false);
@@ -110,7 +95,7 @@ function Registration() {
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: "rgba(245, 245, 245, 0.8)",
-          height:"550px",
+          height: "550px",
           width: "500px",
           margin: "auto",
           padding: 2,
@@ -118,16 +103,16 @@ function Registration() {
         }}
       >
         <div style={{ width: "80%" }}>
-          <Stack 
-          spacing={2}
-          marginTop={6}
-          marginBottom={0}
+          <Stack
+            spacing={2}
+            marginTop={6}
+            marginBottom={0}
           >
             <Typography variant="h4" gutterBottom>
               Registration
             </Typography>
             <Typography variant="subtitle1">
-            Register as a user to receive the latest information on products, campaigns, and bonus program rewards.
+              Register as a user to receive the latest information on products, campaigns, and bonus program rewards.
             </Typography>
             <TextField
               style={{ backgroundColor: "white" }}
