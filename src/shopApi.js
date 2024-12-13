@@ -19,17 +19,23 @@ export function saveRegistration(formData) {
 }
 
 export function getCustomerId(email) {
-  return fetch(import.meta.env.VITE_API_PRODUCTS_URL)
-    .then((response) => {
-      const customers = response.json();
-      customers.map((customer, index) => {
-        customer.id = index;
-        if (customer.email === email) {
-          return index;
-        }
-      })
-        .catch((err) => console.error(err));
-    });
+  return fetch(import.meta.env.VITE_API_REGISTRATION_URL)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Failed to fetch customers: " + response.statusText);
+    }
+    return response.json();
+  })
+  .then((customers) => {
+    const array = customers;
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].email === email) {
+        const customerId = array[i].id;
+        return customerId;
+      }
+    }
+  })
+  .catch((err) => console.error(err));
 }
 
 export function softDeleteCustomer(customerId) {
@@ -37,11 +43,12 @@ export function softDeleteCustomer(customerId) {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      deleted: "true"
+      deleted: true
     }),
   }).then((response) => {
     if (!response.ok)
       throw new Error("Error in saving: " + response.statusText);
+
     return response.json();
   });
 }

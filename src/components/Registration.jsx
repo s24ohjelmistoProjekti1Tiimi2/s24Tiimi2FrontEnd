@@ -17,12 +17,14 @@ function Registration() {
 
   const firstnameErrorValidation = () => {
     if (!formData.firstname) {
-      // show error in form
+      // Show error in form
       setFirstnameError(true);
+      // Return true to firstnameErrorState
       return true;
     } else {
-      // error notification off
+      // Set error notification off
       setFirstnameError(false);
+      // Return false to firstnameErrorState
       return false;
     }
   };
